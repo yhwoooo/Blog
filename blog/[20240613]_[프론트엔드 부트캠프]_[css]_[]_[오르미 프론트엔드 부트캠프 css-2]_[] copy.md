@@ -1,0 +1,185 @@
+# css 첫 수업
+
+# 단위
+
+## 절대/상대 길이 단위
+
+- 절대 길이 단위의 종류: px, pc , pt
+- 상대 길이 단위의 종류: %, vw, vh, vmin, vmax, em ,rem
+
+## px
+
+- 이미지를 표현하는 가장 작은___단위
+- px단위만 사용할 때의 문제가 될 수 있는 부분은?: 다양한 디바이스가 생겨나서 픽셀의 밀도가 다양해졌다. 그래서 디바이스별로 다른 위치, 크기로 보이는 문제가 발생한다.
+
+## %
+
+- 부모요소____를 기준으로 하는 백분율 단위
+
+## vw, vh
+
+- 뷰포트(=화면___)를 기준으로하는 백분율 단위
+- 1vw = ??화면의 1%
+
+## vmin, vmax
+
+화면의 넓이와 높이 중 작은 값이나 큰 값을 기준으로 하는 백분율입니다.
+
+## em
+
+- 부모요소의 글자 크___를 기준으로 하는 배수 단위
+
+## rem
+
+- root____ em
+- em과의 차이는?: em은 부모요소에서 가져오지만 rem은 최상위 요소인 html에서 가져옵니다.
+
+---
+
+# 텍스트 꾸미기
+
+## 폰트 크기
+
+### 크기속성의 여러 단위종류
+
+- px, em, rem
+
+## 폰트 굵기
+
+- `normal` ~ `bold`:  기본 ~ 굵게
+- `lighter` ~ `bolder` : 부모요소보다 한단계 가볍게, 두껍게
+- `100` ~ `900` : 숫자 올라갈수록 굵게
+
+## 대소문자 변경
+
+- `none`: 변형방지
+- **`uppercase`**: 모든 텍스트 대문자
+- **`lowercase`**: 모든 텍스트 소문자
+- `capitalize`: 첫글자 대문자로
+
+## text-decoration(단축 속성)
+
+### text-decoration-color
+
+### text-decoration-line
+
+- **`underline`**: 밑줄 긋기
+- `overline`: 위에 줄 긋기
+- `line-through`: 취소선
+
+### text-decoration-style
+
+- **`solid`** `wavy` `dashed`
+
+### text-decoration-thickness
+
+```css
+.dashed {
+  text-decoration: lime underline overline dashed auto;
+}
+
+.wavy{
+	text-decoration-color: royalblue;
+  text-decoration-line: line-through underline overline;
+  text-decoration-style: wavy;
+	text-decoration-thickness:5px;
+}
+```
+
+## text-shadow
+
+- 텍스트에 그림자__를 추가함
+
+```css
+text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+```
+
+## text-align
+
+- 텍스트의 가로정렬___을 설정함
+- `left` : 왼쪽 정렬
+- `right` : 오른쪽 정렬
+- `center` : 중앙 정렬
+- `justify` : 양쪽 정렬
+- `justify-all`: 양쪽 정렬  (마지막 줄 적용)
+
+## vertical-align
+
+- 텍스트의 세로정렬을 설정합니다.
+- 블록요소? 인라인요소?(중 1개인데..) 및 **테이블 셀 요소**에만 적용됩니다!
+    
+    ![Frame 116.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e8f11927-b70c-4524-9227-a3efac08e7aa/c4a1cf40-a9cd-4ede-b623-4f150e8a0962/Frame_116.png)
+    
+- 블록 레벨 요소를 수직으로 정렬하는 데 사용할 수 없습니다.
+
+## line-height
+
+- 행간__을 설정합니다.
+- 단위, 배수, % 등의 값으로 설정할 수 있습니다.
+
+## letter-spacing
+
+- 자간__을 설정합니다.
+- 단위 값으로 설정할 수 있습니다.
+
+## word-spacing
+
+- 단어 사이의 간격__을 설정합니다.
+- 단위 값으로 설정할 수 있습니다.
+
+## text-indent
+
+- 문단 첫째 줄 들여쓰기를 설정합니다.
+
+## word-break
+
+- 텍스트가 자신의 콘텐츠 박스 밖으로 넘칠 경우 줄바꿈 여부를 지정합니다.
+- `normal` 기본 줄 바꿈 규칙을 사용합니다
+- `break-all` 글 넘침을 방지하기 위해서 어떠한 두 문자 사이에서도 줄바꿈이 발생할 수 있습니다.(한중일 텍스트는 제외)
+- `keep-all` 한중일 텍스트에서 줄을 바꿀때 단어를 끊지 않습니다. 비 한중일 텍스트에서는 normal과 동일합니다.
+
+## text-overflow
+
+- 텍스트가 크기를 벗어날 경우 어떻게 표시할지를 설정합니다
+- `ellipsis`: 말줄임 (…) 사용
+
+```css
+.ellipsis{
+  white-space:nowrap;
+  overflow:hidde
+  text-overflow:ellipsis;
+}
+
+.multi-ellipsis{
+  overflow:hidden;  
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+```
+
+## font-style
+
+- 이탤릭체 사용가능
+
+```css
+span { font-style: italic; }
+```
+
+## font(단축 속성)
+
+- font: `font-style` `font-variant` **`font-weight`** `font-stretch` **`font-size`/`line-height`** **`font-family`**
+- 순서는 /상관있다. 중요하다.
+- `line-height` 는 font-size 속성을 꼭 적고 사용해주세요!
+
+```css
+p {
+	font: italic normal **bold** normal **3em/1.5** **Helvetica, Arial, sans-serif;**
+}
+```
+
+```css
+p {
+	font: **bold** **3em/1.5** **Helvetica, Arial, sans-serif;**
+}
+```
